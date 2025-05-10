@@ -1,3 +1,21 @@
+#### 增加 epub,azw,azw3,mobi,fb2,fb2.zip,cbz 等格式文件预览
+支持 epub,azw,azw3,mobi,fb2,fb2.zip,cbz 格式
+作者已增添api功能，[照此](https://github.com/johnfactotum/foliate-js/issues/3#issuecomment-1398034356)修改
+2023-01-21
+项目 demo 还未添加api，故需自行搭建使用
+kfx/kf8 等格式没找到文件，故未进行测试
+fb2/fb2.zip/cbz 的在线阅读功能还有问题，已报告作者
+
+过程：
+1、Nginx设置：参考《AList添加epub文件预览功能流程分享》(https://github.com/alist-org/alist/discussions/2735)新建目录为/foliatejs/
+2、部署 foliate-js 文件，并照此(https://github.com/johnfactotum/foliate-js/issues/3#issuecomment-1398034356)修改
+3、reader.html 文件中，搜索 样式 .toolbar 将 width 改为 97% 避免前进按钮被全屏按钮遮挡
+4、reader.js 文件中，搜索 menu.groups.layout.select('paginated')，将 paginated 改为 scrolled ，使默认滚动翻页
+5、alist 管理 “Iframe 预览” 添加
+	"epub,epub3,azw,azw3,mobi,fb2,zip,cbz":{
+	"foliate.js":"/foliatejs/reader.html?url=$durl"
+	},
+ 注意：zip是指 .fb2.zip，对于普通的zip文件不能打开要手动切换到 download
 # foliate-js
 
 Library for rendering e-books in the browser.
