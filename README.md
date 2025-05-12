@@ -13,7 +13,7 @@ fb2/fb2.zip/cbz 的在线阅读功能还有问题，已报告作者
 4、reader.js 文件中，搜索 menu.groups.layout.select('paginated')，将 paginated 改为 scrolled ，使默认滚动翻页
 5、alist 管理 “Iframe 预览” 添加
 	"epub,epub3,azw,azw3,mobi,fb2,zip,cbz":{
-	"foliate.js":"/foliatejs/reader.html?url=$durl"
+	"foliate.js":"/foliate-js/reader.html?url=$durl"
 	},
  注意：zip是指 .fb2.zip，对于普通的zip文件不能打开要手动切换到 download
 # foliate-js
